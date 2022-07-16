@@ -9,6 +9,7 @@ import addRecipeView from './views/addRecipeView.js';
 
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
+
 //
 /**
  解構id 並渲染畫面
@@ -132,5 +133,13 @@ const init = function () {
   searchView.addHandlerSearch(controlSearchResults);
   paginationView.addHandlerClick(controlPagination);
   addRecipeView.addHandlerUpload(controlAddRecipe);
+};
+window.onunload = function () {
+  localStorage.setItem('a', JSON.stringify(model.state.bookmarks));
+};
+window.onload = function () {
+  const a = localStorage.getItem('a');
+  console.log(a);
+  console.log(456);
 };
 init();

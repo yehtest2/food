@@ -1,11 +1,10 @@
-const a = [1, 2, 3];
-const b = function (f) {
-  const s = 8;
-  if (f === 2) {
-    return s;
-  }
-  console.log('s');
-  return f * 3;
+const a = bc => {
+  return (a, b, c) => {
+    bc(a, b, c).catch(c);
+  };
 };
-const c = b(2);
-console.log(c);
+
+const c = a(async (a, b, c) => {
+  console.log(a);
+});
+c(1, 2, 3);
